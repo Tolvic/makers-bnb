@@ -1,6 +1,6 @@
 require 'sinatra/base'
-require './lib/mock'
 require './lib/database_connection_setup.rb'
+require './lib/database_connection.rb'
 require './lib/user'
 
 class Bnb < Sinatra::Base
