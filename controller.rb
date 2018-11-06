@@ -13,6 +13,14 @@ class Bnb < Sinatra::Base
 
   get '/spaces' do
     @all_spaces = Space.all
+    # in development
+    # @all_spaces.each do |space|
+    #   p JSON.generate({
+    #     space_name: space.space_name,
+    #     description: space.description,
+    #     price_per_night: space.price_per_night
+    #     })
+    end
     erb :'/spaces/index'
   end
 
