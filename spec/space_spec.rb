@@ -5,7 +5,9 @@ describe Space do
   before do
     @space = Space.create(user_id: 1,
       space_name: 'example',
-      description: 'example description')
+      description: 'example description',
+      price_per_night: 100
+    )
   end
 
   it 'is an instance of Space' do
@@ -22,5 +24,9 @@ describe Space do
 
   it 'we can call a space description from a space' do
     expect(@space.description).to eq('example description')
+  end
+
+  it 'we can call a space price_per_night from a space' do
+    expect(@space.price_per_night).to eq(100)
   end
 end
