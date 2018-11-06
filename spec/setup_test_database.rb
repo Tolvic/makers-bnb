@@ -8,5 +8,5 @@ def setup_test_database
   connection = PG.connect(dbname: 'makers_bnb_db_test')
 
   # Clear the messages table
-  connection.exec("TRUNCATE users, spaces;")
+  # connection.exec("TRUNCATE users, spaces;")
 end
