@@ -1,17 +1,37 @@
 require 'sinatra/base'
-require './lib/space.rb'
 require './lib/database_connection_setup.rb'
 require './lib/database_connection.rb'
+require './lib/user'
+require './lib/space.rb'
 
 
 class Bnb < Sinatra::Base
   enable :sessions
-
+  
   get '/' do
     erb :index
   end
 
+  get '/user/new' do
+    erb :"user/new"
+  end
+
+  post '/user' do
+    user = User.create(
+    name: params[:name],
+    username: params[:username],
+    telephone_number: params[:telephone_number],
+    email_address: params[:email_address],
+    password: params[:password]
+    )
+    session[:user_id] = user.id
+    session[:username] = user.username
+    redirect '/spaces'
+  end
+  
   get '/spaces' do
+    @user_id = session[:user_id]
+    @username = session[:username]
     @all_spaces = Space.all
     # in development
     # @all_spaces.each do |space|
