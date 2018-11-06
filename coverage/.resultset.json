@@ -5,11 +5,11 @@
         null,
         null,
         1,
-        6,
+        8,
         null,
-        6,
+        8,
         null,
-        6,
+        8,
         null,
         null,
         null,
@@ -45,6 +45,28 @@
         null
       ],
       "/Users/thomas.lightfoot/Projects/Week-Six/makers-bnb/spec/features/infrastructure_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/thomas.lightfoot/Projects/Week-Six/makers-bnb/spec/features/new_space_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/thomas.lightfoot/Projects/Week-Six/makers-bnb/spec/features/spaces_spec.rb": [
+        1,
         1,
         1,
         1,
@@ -104,6 +126,6 @@
         null
       ]
     },
-    "timestamp": 1541503262
+    "timestamp": 1541506386
   }
 }
