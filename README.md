@@ -89,11 +89,3 @@ I want my space to still be available for booking requests until I approve one
 ## Set up
 * bundle - to install dependent gems
 *
-
-Finish set up of testing
-- RSPEC
-- Capybara
-- Jasmine
-
-Skeleton
-QUICK delegation
