@@ -34,4 +34,21 @@ describe Space do
   it 'we can call a space price_per_night from a space' do
     expect(@space.price_per_night).to eq("100")
   end
+
+  it 'outputs all spaces' do
+    Space.create(user_id: 2,
+      space_name: 'example2',
+      description: 'example description2',
+      price_per_night: 1002
+    )
+    Space.create(user_id: 3,
+      space_name: 'example3',
+      description: 'example description3',
+      price_per_night: 1003
+    )
+    
+    all_spaces = Space.all
+
+    expect(all_spaces[2].price_per_night).to eq "1003"
+  end
 end

@@ -1,7 +1,4 @@
-require 'database_connection.rb'
-
 class Space
-
   attr_reader :id, :user_id, :space_name, :description, :price_per_night
 
   def initialize(id, user_id, space_name, description, price_per_night)
@@ -23,5 +20,17 @@ class Space
       result[0]["description"],
       result[0]["price_per_night"]
     )
+  end
+
+  def self.all
+    all = DatabaseConnection.query("SELECT * FROM spaces").to_a
+    all.map do |space|
+      Space.new(space["id"],
+      space["user_id"],
+      space["space_name"],
+      space["description"],
+      space["price_per_night"]
+      )
+    end
   end
 end

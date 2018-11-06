@@ -1,6 +1,8 @@
 require 'sinatra/base'
-require './lib/mock'
+require './lib/space.rb'
 require './lib/database_connection_setup.rb'
+require './lib/database_connection.rb'
+
 
 class Bnb < Sinatra::Base
   enable :sessions
@@ -10,6 +12,7 @@ class Bnb < Sinatra::Base
   end
 
   get '/spaces' do
+    @all_spaces = Space.all
     erb :'/spaces/index'
   end
 
@@ -18,6 +21,12 @@ class Bnb < Sinatra::Base
   end
 
   post '/spaces' do
+    Space.create(
+      user_id: params[:user_id],
+      space_name: params[:space_name],
+      description: params[:description],
+      price_per_night: params[:price_per_night]
+    )
     redirect '/spaces'
   end
 

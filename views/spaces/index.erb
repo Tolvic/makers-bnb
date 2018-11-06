@@ -13,4 +13,12 @@
   <form action="/spaces/new" method="get">
     <button name="List new space">List new space</button>
   </form>
+  <% @all_spaces.each do |space| %>
+      <ul>
+        <li><%= space.space_name %></li>
+        <li><%= space.description %></li>
+        <li><%= space.price_per_night %></li>
+      </ul>
+  <% end %>
+
 </body>
