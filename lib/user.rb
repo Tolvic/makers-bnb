@@ -1,4 +1,4 @@
-require 'database_connection'
+require './lib/database_connection'
 class User
 
 attr_reader :id, :name, :username, :telephone_number, :email_address

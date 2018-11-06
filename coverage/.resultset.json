@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/moishe/Documents/Projects/Week-6/makers-bnb/spec/setup_test_database.rb": [
+      "/Users/johnlittler/Desktop/Projects/Makers_Prep/Ruby_Challenges/Week_6_Challenges/makers-bnb/spec/setup_test_database.rb": [
         null,
         null,
         1,
@@ -15,7 +15,7 @@
         null,
         null
       ],
-      "/Users/moishe/Documents/Projects/Week-6/makers-bnb/spec/database_connection_spec.rb": [
+      "/Users/johnlittler/Desktop/Projects/Makers_Prep/Ruby_Challenges/Week_6_Challenges/makers-bnb/spec/database_connection_spec.rb": [
         1,
         null,
         1,
@@ -44,7 +44,7 @@
         null,
         null
       ],
-      "/Users/moishe/Documents/Projects/Week-6/makers-bnb/spec/features/infrastructure_spec.rb": [
+      "/Users/johnlittler/Desktop/Projects/Makers_Prep/Ruby_Challenges/Week_6_Challenges/makers-bnb/spec/features/infrastructure_spec.rb": [
         1,
         1,
         1,
@@ -52,7 +52,7 @@
         null,
         null
       ],
-      "/Users/moishe/Documents/Projects/Week-6/makers-bnb/spec/features/user_registration_spec.rb": [
+      "/Users/johnlittler/Desktop/Projects/Makers_Prep/Ruby_Challenges/Week_6_Challenges/makers-bnb/spec/features/user_registration_spec.rb": [
         1,
         1,
         1,
@@ -67,7 +67,7 @@
         null,
         null
       ],
-      "/Users/moishe/Documents/Projects/Week-6/makers-bnb/spec/user_spec.rb": [
+      "/Users/johnlittler/Desktop/Projects/Makers_Prep/Ruby_Challenges/Week_6_Challenges/makers-bnb/spec/user_spec.rb": [
         1,
         1,
         1,
@@ -94,61 +94,7 @@
         null,
         null
       ],
-      "/Users/moishe/Documents/Projects/Week-6/makers-bnb/lib/user.rb": [
-        1,
-        1,
-        null,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        0,
-        null,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/moishe/Documents/Projects/Week-6/makers-bnb/spec/database_helper.rb": [
+      "/Users/johnlittler/Desktop/Projects/Makers_Prep/Ruby_Challenges/Week_6_Challenges/makers-bnb/spec/database_helper.rb": [
         1,
         null,
         1,
@@ -157,6 +103,6 @@
         null
       ]
     },
-    "timestamp": 1541513469
+    "timestamp": 1541517966
   }
 }
