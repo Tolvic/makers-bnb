@@ -88,4 +88,78 @@ I want my space to still be available for booking requests until I approve one
 
 ## Set up
 * bundle - to install dependent gems
-*
+* use homebrew to install Postgres sql
+
+
+```
+brew install postgresql
+```
+
+Allow Homebrew to start and stop the Postgres service
+
+```
+ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
+```
+
+Connect to psql
+Create the database using the psql command
+
+```
+CREATE DATABASE makers_bnb_db;
+```
+
+* Connect to the database using the pqsl command
+
+```
+\c makers_bnb_db;
+```
+
+* Run the query in the sql files contained within the db folder
+
+* Repeat these steps but create a database called makers_bnb_db_test
+
+
+```JavaScript
+<p id="a" >4</p>
+<p id ="b" >5</p>
+<button id="add">add</button>
+<button id="get">get</button>
+<p id="answer"></p>
+
+<script type="text/javascript">
+
+
+
+function passParms() {
+  $.ajax({
+    type: "POST",
+    url: "/",
+    data: {
+      a: $('#a').text(),
+      b: $('#b').text()
+    }
+  });
+}
+
+function getAnswer(){
+  $.ajax({
+    type: "GET",
+    url: "/answer",
+    dataType: 'json',
+    success: function(data){
+      $('#answer').text(data.answer);
+    }
+  });
+}
+
+$("#add").click(function(){
+  passParms();
+
+})
+
+$("#get").click(function(){
+  getAnswer();
+
+})
+```

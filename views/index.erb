@@ -4,49 +4,4 @@
 
 <body>
 
-  <p id="a" >4</p>
-  <p id ="b" >5</p>
-  <button id="add">add</button>
-  <button id="get">get</button>
-  <p id="answer"></p>
-
-  <script type="text/javascript">
-
-
-
-  function passParms() {
-    $.ajax({
-      type: "POST",
-      url: "/",
-      data: {
-        a: $('#a').text(),
-        b: $('#b').text()
-      }
-    });
-  }
-
-  function getAnswer(){
-    $.ajax({
-      type: "GET",
-      url: "/answer",
-      dataType: 'json',
-      success: function(data){
-        $('#answer').text(data.answer);
-      }
-    });
-  }
-
-  $("#add").click(function(){
-    passParms();
-
-  })
-
-  $("#get").click(function(){
-    getAnswer();
-
-  })
-
-
-
-  </script>
 </body>
