@@ -14,8 +14,13 @@ describe Space do
     expect(@space).to be_an_instance_of(Space)
   end
 
+  it 'we can call a space id from a space' do
+    persisted_data = DatabaseConnection.query("SELECT * FROM spaces WHERE id = #{@space.id}")[0]
+    expect(@space.id).to eq persisted_data['id']
+  end
+
   it 'we can call a user id from a space' do
-    expect(@space.user_id).to eq(1)
+    expect(@space.user_id).to eq("1")
   end
 
   it 'we can call a space name from a space' do
@@ -27,6 +32,6 @@ describe Space do
   end
 
   it 'we can call a space price_per_night from a space' do
-    expect(@space.price_per_night).to eq(100)
+    expect(@space.price_per_night).to eq("100")
   end
 end

@@ -1,7 +1,6 @@
 require 'pg'
 
 class DatabaseConnection
-
   def self.connection
     @connection
   end

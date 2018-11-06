@@ -1,4 +1,4 @@
-feature 'Listing a new space' do
+feature 'FEATURE Listing a new space' do
   scenario 'Fill in form to list new space' do
     visit('/spaces/new')
     fill_in "User ID", with: 1
