@@ -31,54 +31,67 @@
 
 ## User Stories
 ```
+1
 As a user (landlord)
 so that i can have an account
 I want to be able to sign up for Makers bnb
 
+2
 As a user
 So that only I can list/rent a space
 I want to log in to Maker's BnB
 
+3
 As a user
 So that I can avoid others listing/renting as me
 I want to log out of Maker's BnB
 
+4
 As a user (landlord)
 so that i can rent out my space
 I want to be able able to list a new space
 
+5
 As a user (landlord)
 so that i can rent out multiple spaces
 I want to be able able to list multiple spaces
 
+6
 As a user (landlord) who has listed a space
 so that can provide additional info on my space
 I want to be able to name my space
 
+7
 As a user (landlord) who has listed a space
 so that can provide additional info on my space
 I want to be able to provide a short description of the space
 
+8
 As a user (landlord) who has listed a space
 so that can provide additional info on my space
 I want to be able to list a price per night.
 
+9
 As a user (landlord)
 so that my listing availability is clear to renters  
 I want to set a range of dates where my space is available.
 
+10
 As a user (renter)
 so that i can book a space for a night
 I want to request to hire a space for one night
 
+11
 As a user (landlord)
 so that I can rent my space out
 I want to be able to approve a request to rent a space
 
+12
 As a user
 so that spaces are not double booked
 I want to see that the space is not available for dates it has already beed booked
 
+13
 As a user (landlord)
 so that i do not lose potential renters
 I want my space to still be available for booking requests until I approve one
