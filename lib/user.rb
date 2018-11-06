@@ -30,25 +30,10 @@ attr_reader :id, :name, :username, :telephone_number, :email_address
       telephone_number: result[0]['telephone_number'],
       email_address: result[0]['email_address'])
   end
+
+  def self.already_registered?(email:, username:, telephone_number:)
+    result = DatabaseConnection.query("SELECT * FROM users
+      WHERE email_address = '#{email}' OR username = '#{username}' OR telephone_number = '#{telephone_number}'")
+    result.any?
+  end
 end
-
-
-
- def self.create(first_name:, last_name:, username:, email:, password:)
-   encrypted_password = BCrypt::Password.create(password)
-
-   result = DatabaseConnection.query("INSERT INTO
-     users(firstname, lastname, username, email, password)
-     VALUES('#{first_name}',
-       '#{last_name}',
-       '#{username}',
-       '#{email}',
-       '#{encrypted_password}')
-   RETURNING id, firstname, lastname, username, email;")
-
-   User.new(id: result[0]['id'],
-     first_name: result[0]['firstname'],
-     last_name: result[0]['lastname'],
-     username: result[0]['username'],
-     email: result[0]['email'])
- end

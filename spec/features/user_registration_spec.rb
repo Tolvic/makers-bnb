@@ -8,6 +8,6 @@ feature 'User story 1 - I want to be able to sign up for Makers bnb' do
     fill_in('password', with: 'IhatedaffyD123')
     click_button('submit')
 
-    expect(page).to have_content('Welcome D.Dowg')
+    expect(page).to have_content('Welcome, D.Dowg')
   end
 end

@@ -40,7 +40,6 @@ class Bnb < Sinatra::Base
     #     description: space.description,
     #     price_per_night: space.price_per_night
     #     })
-    end
     erb :'/spaces/index'
   end
 
