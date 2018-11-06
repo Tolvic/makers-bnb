@@ -7,7 +7,7 @@ require './lib/space.rb'
 
 class Bnb < Sinatra::Base
   enable :sessions
-  
+
   get '/' do
     erb :index
   end
@@ -28,7 +28,7 @@ class Bnb < Sinatra::Base
     session[:username] = user.username
     redirect '/spaces'
   end
-  
+
   get '/spaces' do
     @user_id = session[:user_id]
     @username = session[:username]
@@ -40,7 +40,7 @@ class Bnb < Sinatra::Base
     #     description: space.description,
     #     price_per_night: space.price_per_night
     #     })
-    end
+    # end
     erb :'/spaces/index'
   end
 
