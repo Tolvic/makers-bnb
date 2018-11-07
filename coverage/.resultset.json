@@ -53,6 +53,7 @@
         1,
         1,
         null,
+        null,
         null
       ],
       "/Users/moishe/Documents/Projects/Week-6/makers-bnb/spec/features/infrastructure_spec.rb": [
@@ -234,6 +235,6 @@
         null
       ]
     },
-    "timestamp": 1541608993
+    "timestamp": 1541609340
   }
 }
