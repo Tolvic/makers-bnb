@@ -17,6 +17,7 @@ class Bnb < Sinatra::Base
   end
 
   post '/user' do
+    
     user = User.create(
     name: params[:name],
     username: params[:username],
@@ -28,6 +29,22 @@ class Bnb < Sinatra::Base
     session[:username] = user.username
     redirect '/spaces'
   end
+
+  post '/user/registered-check' do
+    session[:already_registered] = User.already_registered?(email: params[:email_address], username: params[:username], telephone_number: params[:telephone_number]) 
+    
+    puts session[:already_registered]
+
+    p JSON.generate({
+      already_registered: session[:already_registered]
+    })
+  end
+
+  # get '/user/registered-check' do
+  #   JSON.generate({
+  #     already_registered: session[:already_registered]
+  #     })
+  # end
   
   get '/spaces' do
     @user_id = session[:user_id]
