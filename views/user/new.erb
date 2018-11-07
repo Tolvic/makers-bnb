@@ -9,6 +9,7 @@
 
 <body>
   <h1>Makers BnB</h1>
+  <h4><%= flash[:notice] %></h4>
   <form action='/user' method="post">
     <input type="text" name="name" placeholder="Enter name" required="" autofocus="" />
     <input type="text" name="username" placeholder="Enter username" required="" />

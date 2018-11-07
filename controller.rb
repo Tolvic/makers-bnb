@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'sinatra/flash'
 require './lib/database_connection_setup.rb'
 require './lib/database_connection.rb'
 require './lib/user'
@@ -7,6 +8,7 @@ require './lib/space.rb'
 
 class Bnb < Sinatra::Base
   enable :sessions
+  register Sinatra::Flash
 
   get '/' do
     erb :index
@@ -17,16 +19,23 @@ class Bnb < Sinatra::Base
   end
 
   post '/user' do
-    user = User.create(
-    name: params[:name],
-    username: params[:username],
+    if User.already_registered?(username: params[:username],
     telephone_number: params[:telephone_number],
-    email_address: params[:email_address],
-    password: params[:password]
-    )
-    session[:user_id] = user.id
-    session[:username] = user.username
-    redirect '/spaces'
+    email_address: params[:email_address])
+      flash[:notice] = "Credentials have already been used by another user."
+      redirect '/user/new'
+    else
+      user = User.create(
+      name: params[:name],
+      username: params[:username],
+      telephone_number: params[:telephone_number],
+      email_address: params[:email_address],
+      password: params[:password]
+      )
+      session[:user_id] = user.id
+      session[:username] = user.username
+      redirect '/spaces'
+    end
   end
 
   get '/spaces' do
@@ -56,6 +65,10 @@ class Bnb < Sinatra::Base
       price_per_night: params[:price_per_night]
     )
     redirect '/spaces'
+  end
+
+  get 'session/new'
+    erb :'/session/new'
   end
 
   run! if app_file == $0

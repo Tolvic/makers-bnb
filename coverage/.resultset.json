@@ -5,13 +5,13 @@
         null,
         null,
         1,
-        26,
+        27,
         null,
-        26,
+        27,
         null,
-        26,
+        27,
         null,
-        26,
+        27,
         null
       ],
       "/Users/terencemace/projects/makers-bnb/spec/database_connection_spec.rb": [
@@ -136,6 +136,29 @@
         1,
         null,
         1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
         null,
         null
       ],
@@ -304,6 +327,6 @@
         null
       ]
     },
-    "timestamp": 1541608179
+    "timestamp": 1541610433
   }
 }
