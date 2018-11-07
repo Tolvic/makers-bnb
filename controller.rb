@@ -63,7 +63,7 @@ class Bnb < Sinatra::Base
 
   post '/spaces' do
     Space.create(
-      user_id: params[:user_id],
+      user_id: session[:user_id],
       space_name: params[:space_name],
       description: params[:description],
       price_per_night: params[:price_per_night]
