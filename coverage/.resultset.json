@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/terencemace/projects/makers-bnb/spec/setup_test_database.rb": [
+      "/Users/moishe/Documents/Projects/Week-6/makers-bnb/spec/setup_test_database.rb": [
         null,
         null,
         1,
@@ -14,7 +14,7 @@
         17,
         null
       ],
-      "/Users/terencemace/projects/makers-bnb/spec/database_connection_spec.rb": [
+      "/Users/moishe/Documents/Projects/Week-6/makers-bnb/spec/database_connection_spec.rb": [
         1,
         null,
         1,
@@ -43,7 +43,7 @@
         null,
         null
       ],
-      "/Users/terencemace/projects/makers-bnb/spec/features/infrastructure_spec.rb": [
+      "/Users/moishe/Documents/Projects/Week-6/makers-bnb/spec/features/infrastructure_spec.rb": [
         1,
         1,
         1,
@@ -51,19 +51,10 @@
         null,
         null
       ],
-      "/Users/terencemace/projects/makers-bnb/spec/features/new_space_spec.rb": [
+      "/Users/moishe/Documents/Projects/Week-6/makers-bnb/spec/features/new_space_spec.rb": [
         1,
         1,
         1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/terencemace/projects/makers-bnb/spec/features/spaces_spec.rb": [
         1,
         1,
         1,
@@ -72,7 +63,16 @@
         null,
         null
       ],
-      "/Users/terencemace/projects/makers-bnb/spec/features/user_registration_spec.rb": [
+      "/Users/moishe/Documents/Projects/Week-6/makers-bnb/spec/features/spaces_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/moishe/Documents/Projects/Week-6/makers-bnb/spec/features/user_registration_spec.rb": [
         1,
         1,
         1,
@@ -87,7 +87,7 @@
         null,
         null
       ],
-      "/Users/terencemace/projects/makers-bnb/spec/space_spec.rb": [
+      "/Users/moishe/Documents/Projects/Week-6/makers-bnb/spec/space_spec.rb": [
         1,
         null,
         1,
@@ -167,7 +167,7 @@
         null,
         null
       ],
-      "/Users/terencemace/projects/makers-bnb/spec/user_spec.rb": [
+      "/Users/moishe/Documents/Projects/Week-6/makers-bnb/spec/user_spec.rb": [
         1,
         1,
         null,
@@ -213,7 +213,7 @@
         null,
         null
       ],
-      "/Users/terencemace/projects/makers-bnb/spec/database_helper.rb": [
+      "/Users/moishe/Documents/Projects/Week-6/makers-bnb/spec/database_helper.rb": [
         1,
         null,
         1,
@@ -222,6 +222,6 @@
         null
       ]
     },
-    "timestamp": 1541603432
+    "timestamp": 1541605622
   }
 }
