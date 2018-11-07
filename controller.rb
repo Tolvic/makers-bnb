@@ -11,6 +11,7 @@ class Bnb < Sinatra::Base
   register Sinatra::Flash
 
   get '/' do
+    redirect '/spaces' if session[:user_id]
     erb :index
   end
 
@@ -39,6 +40,7 @@ class Bnb < Sinatra::Base
   end
 
   get '/spaces' do
+    redirect '/' unless session[:user_id]
     @user_id = session[:user_id]
     @username = session[:username]
     @all_spaces = Space.all
@@ -54,6 +56,8 @@ class Bnb < Sinatra::Base
   end
 
   get '/spaces/new' do
+    redirect '/' unless session[:user_id]
+
     erb :'/spaces/new'
   end
 
