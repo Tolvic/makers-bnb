@@ -7,6 +7,8 @@ require './lib/space.rb'
 
 class Bnb < Sinatra::Base
   enable :sessions
+  attr_reader :set_date
+
 
   get '/' do
     erb :index
@@ -45,16 +47,19 @@ class Bnb < Sinatra::Base
   end
 
   get '/spaces/new' do
+    #attempting to use if statement to show and hide availability #@set_date = false
     erb :'/spaces/new'
   end
 
-  post '/spaces' do
+  post '/store_space' do
+    #attempting to use if statement to show and hide availability  # @set_date = true
     Space.create(
       user_id: session[:user_id],
       space_name: params[:space_name],
       description: params[:description],
       price_per_night: params[:price_per_night]
     )
+
     redirect '/spaces'
   end
 

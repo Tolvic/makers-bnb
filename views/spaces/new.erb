@@ -9,12 +9,17 @@
 
 <body>
   <h1>Makers BnB</h1>
+  <!-- <% if @set_date == false%> -->
   <h2>List new space</h2>
 
-  <form action="/spaces" method="post">
+  <form action="/store_space" method="post">
     Space name<input type='text' name="space_name" placeholder="Space name"></input>
     Description<input type='text' name="description" placeholder="Description"></input>
     Price per night<input type='number' name="price_per_night" placeholder="Price per night"></input>
     <input type="submit" value="submit"></input>
   </form>
+   <!--
+  <% else  #attempting to use if statement to show and hide availability %>
+  <input id='date' type='text' name="date" placeholder="Set an availible date"></input>
+  <%end%> -->
 </body>

@@ -5,7 +5,7 @@ feature 'FEATURE set availability' do
     fill_in 'description', with: 'example description'
     fill_in 'price_per_night', with: 100
     click_button 'submit'
-    expect(page).to have_field("Date")
+    expect(page).to have_field("date")
   end
 end
 # This doesnt work
