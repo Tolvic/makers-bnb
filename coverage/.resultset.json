@@ -5,13 +5,13 @@
         null,
         null,
         1,
-        17,
+        18,
         null,
-        17,
+        18,
         null,
-        17,
+        18,
         null,
-        17,
+        18,
         null
       ],
       "/Users/moishe/Documents/Projects/Week-6/makers-bnb/spec/database_connection_spec.rb": [
@@ -40,6 +40,18 @@
         null,
         1,
         null,
+        null,
+        null
+      ],
+      "/Users/moishe/Documents/Projects/Week-6/makers-bnb/spec/features/avalability_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
         null,
         null
       ],
@@ -222,6 +234,6 @@
         null
       ]
     },
-    "timestamp": 1541606702
+    "timestamp": 1541608993
   }
 }
