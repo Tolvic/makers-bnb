@@ -67,8 +67,22 @@ class Bnb < Sinatra::Base
     redirect '/spaces'
   end
 
-  get 'session/new'
+  get '/session/new' do
     erb :'/session/new'
+  end
+
+  post '/session' do
+    user = User.authenticate(username: params[:username], password: params[:password])
+
+    if user
+      session[:user_id] = user.id
+      session[:username] = user.username
+      redirect('/spaces')
+    else
+      flash[:notice] = 'Please check your email or password.'
+      redirect('/session/new')
+    end
+
   end
 
   run! if app_file == $0

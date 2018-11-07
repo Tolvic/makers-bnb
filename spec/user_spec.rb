@@ -43,16 +43,16 @@ describe User do
 
   describe '#authenticate' do
     it 'returns nil given an incorrect email address' do
-      expect(User.authenticate(email_address: 'nottherightemail@me.com', password: 'IhatedaffyD123')).to be_nil
+      expect(User.authenticate(username: 'nottherightusername', password: 'IhatedaffyD123')).to be_nil
     end
 
     it 'returns nil given an incorrect password' do
-      expect(User.authenticate(email_address: 'DDowd@duckmail.com', password: 'wrongpassword')).to be_nil
+      expect(User.authenticate(username: 'DDowg', password: 'wrongpassword')).to be_nil
     end
 
     it 'returns a user given a correct username and password, if one exists' do
 
-      authenticated_user = User.authenticate(email_address: 'DDowd@duckmail.com', password: 'IhatedaffyD123')
+      authenticated_user = User.authenticate(username: 'DDowg', password: 'IhatedaffyD123')
 
       expect(authenticated_user.id).to eq @user.id
     end

@@ -49,9 +49,9 @@ attr_reader :id, :name, :username, :telephone_number, :email_address
     result.any?
   end
 
-  def self.authenticate(email_address:, password:)
+  def self.authenticate(username:, password:)
     result = DatabaseConnection.query("SELECT * FROM users
-      WHERE email_address = '#{email_address}'")
+      WHERE username = '#{username}'")
 
     return unless result.any?
     return unless BCrypt::Password.new(result[0]['password']) == password

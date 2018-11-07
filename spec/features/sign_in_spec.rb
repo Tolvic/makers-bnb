@@ -8,8 +8,8 @@ feature 'Feature - authentication' do
   end
 
   it 'a user can sign in' do
-    visit '/sessions/new'
-    fill_in(:email_address, with: 'test@example.com')
+    visit '/session/new'
+    fill_in(:username, with: 'DDowg')
     fill_in(:password, with: 'password123')
     click_button('Sign in')
 
@@ -17,8 +17,8 @@ feature 'Feature - authentication' do
   end
 
   scenario 'a user sees an error if they get their email wrong' do
-    visit '/sessions/new'
-    fill_in(:email_address, with: 'nottherightemail@me.com')
+    visit '/session/new'
+    fill_in(:username, with: 'anotherusername')
     fill_in(:password, with: 'password123')
     click_button('Sign in')
 
@@ -27,8 +27,8 @@ feature 'Feature - authentication' do
   end
 
   scenario 'a user sees an error if they get their password wrong' do
-    visit '/sessions/new'
-    fill_in(:email_address, with: 'test@example.com')
+    visit '/session/new'
+    fill_in(:username, with: 'DDowg')
     fill_in(:password, with: 'wrongpassword')
     click_button('Sign in')
 
@@ -37,8 +37,8 @@ feature 'Feature - authentication' do
   end
 
   scenario 'a user can sign out' do
-    visit '/sessions/new'
-    fill_in(:email_address, with: 'test@example.com')
+    visit '/session/new'
+    fill_in(:username, with: 'DDowg')
     fill_in(:password, with: 'password123')
     click_button('Sign in')
 
