@@ -47,12 +47,18 @@ class Booking
       RETURNING id, user_id, space_id, availability_id, approval_status"
     )
 
-    Booking.new(
+    result = Booking.new(
       result[0]["id"],
       result[0]["user_id"],
       result[0]["space_id"],
       result[0]["availability_id"],
       result[0]["approval_status"]
+    )
+
+    DatabaseConnection.query(
+      "UPDATE bookings
+      SET approval_status = 'declined'
+      WHERE space_id = '#{result.space_id}' AND availability_id = #{result.availability_id} AND NOT id = #{result.id}"
     )
   end
 end

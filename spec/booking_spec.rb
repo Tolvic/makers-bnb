@@ -80,8 +80,31 @@ describe User do
 
   describe '#approval' do
     it 'changes the status of a booking to approved' do
-      @booking = Booking.approve(@booking.id)
-      expect(@booking.approval_status).to eq "approved"
+      @renter2 = User.create(name: 'John',
+      username: 'Terry',
+      telephone_number: '07555555234',
+      email_address: 'jterry@duckmail.com',
+      password: 'IlovejterryT123')
+
+      @booking2 = Booking.create(space_id: @space.id,
+        user_id: @renter2.id,
+        availability_id: 1,
+      )
+
+      @booking3 = Booking.create(space_id: @space.id,
+        user_id: @renter2.id,
+        availability_id: 2,
+      )
+
+      Booking.approve(@booking.id)
+
+      persisted_data1 = persisted_data(table: 'bookings', id: @booking.id)
+      persisted_data2 = persisted_data(table: 'bookings', id: @booking2.id)
+      persisted_data3 = persisted_data(table: 'bookings', id: @booking3.id)
+
+      expect(persisted_data1["approval_status"]).to eq "approved"
+      expect(persisted_data2["approval_status"]).to eq "declined"
+      expect(persisted_data3["approval_status"]).to eq "pending"
     end
   end
 end
