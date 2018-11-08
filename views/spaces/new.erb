@@ -9,23 +9,17 @@
 
 <body>
   <h1>Makers BnB</h1>
-<<<<<<< HEAD
-  <!-- <% if @set_date == false%> -->
-=======
   <form action="/sessions/destroy" method="post">
     <input class="nav-link" type="submit" value="Sign out" />
   </form>
->>>>>>> b4ad38fad77f258803f6434cc94ea34c264557fb
+
   <h2>List new space</h2>
 
-  <form action="spaces/store_space" method="post">
+  <form action="/spaces/:id" method="post">
     Space name<input type='text' name="space_name" placeholder="Space name"></input>
     Description<input type='text' name="description" placeholder="Description"></input>
     Price per night<input type='number' name="price_per_night" placeholder="Price per night"></input>
     <input type="submit" value="submit"></input>
   </form>
-   <!--
-  <% else  #attempting to use if statement to show and hide availability %>
-  <input id='date' type='text' name="date" placeholder="Set an availible date"></input>
-  <%end%> -->
+
 </body>

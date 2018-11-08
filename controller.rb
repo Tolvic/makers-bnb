@@ -4,11 +4,11 @@ require './lib/database_connection_setup.rb'
 require './lib/database_connection.rb'
 require './lib/user'
 require './lib/space.rb'
+require './lib/availability.rb'
 
 
 class Bnb < Sinatra::Base
   enable :sessions
-
   register Sinatra::Flash
 
   get '/' do
@@ -49,32 +49,31 @@ class Bnb < Sinatra::Base
   end
 
   get '/spaces/new' do
-
     redirect '/' unless session[:user_id]
     erb :'/spaces/new'
   end
 
   post '/spaces/:id' do
-    Space.create(
+    @new_space = Space.create(
       user_id: session[:user_id],
       space_name: session[:space_name],
       description: params[:description],
       price_per_night: params[:price_per_night]
     )
+    session[:spaces_id] = @new_space.id
     redirect '/availability'
   end
 
   get '/availability' do
     @space_name = session[:space_name]
-    session[:space_id] = "some method in availability class"
     erb :'/availability/index'
   end
 
 
   post '/availability/new' do
-    # availible_dates: params[:new_date]
     @space_id = session[:space_id]
-    @date =
+    p @date = params[:new_date]
+    Availability.create(@space_id, @date)
     redirect '/availability'
   end
 

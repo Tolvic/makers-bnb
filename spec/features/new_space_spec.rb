@@ -15,6 +15,6 @@ feature 'FEATURE Listing a new space' do
     fill_in "description", with: 'example description'
     fill_in "price_per_night", with: 100
     click_button "submit"
-    expect(page).to have_content 'example description'
+    expect(page).to have_content 'please set an available date for property'
   end
 end

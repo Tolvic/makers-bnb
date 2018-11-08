@@ -8,12 +8,15 @@
 
 <body>
   <h1>Makers BnB</h1>
-  <p id="availibality_title">Hi <%= @username %>, Please set an available date for x property.
+  <p id="availibality_title">Hi <%= @username %>, please set an available date for <%=@space_name%> property.
 
   <form action="/availability/new" method="post">
     Enter an available date<input id='new_date' type='date' name="new_date" placeholder="xx/xx/xxxx"></input>
     <input type="submit" value="submit"></input>
   </form>
 
+  <form action="/spaces" method="get">
+    <input type="submit" value="See all spaces"></input>
+  </form>
 
 </body>
