@@ -9,27 +9,15 @@
 
 <body>
   <h1>Makers BnB</h1>
+  <h2>Sign in</h2>
   <h4>
     <%= flash[:notice] %>
   </h4>
-  <ul>
-    <li>
-      <a type="button" href="/session/new">
-        <button>
-          Sign in
-        </button>
-      </a>
-    </li>
-    <li>
-      <a type="button" href="/user/new">
-        <button>
-          Sign up
-        </button>
-      </a>
 
-    </li>
-
-
-  </ul>
+  <form action="/session" method="POST">
+    <input name="username" type="text" placeholder="username" required="" autofocus="" />
+    <input name="password" type="password" required="" />
+    <input type="submit" value="Sign in" />
+  </form>
 
 </body>
