@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'sinatra/flash'
 require './lib/database_connection_setup.rb'
 require './lib/database_connection.rb'
 require './lib/user'
@@ -8,7 +9,10 @@ require './lib/space.rb'
 class Bnb < Sinatra::Base
   enable :sessions
 
+  register Sinatra::Flash
+
   get '/' do
+    redirect '/spaces' if session[:user_id]
     erb :index
   end
 
@@ -17,19 +21,27 @@ class Bnb < Sinatra::Base
   end
 
   post '/user' do
-    user = User.create(
-    name: params[:name],
-    username: params[:username],
+    if User.already_registered?(username: params[:username],
     telephone_number: params[:telephone_number],
-    email_address: params[:email_address],
-    password: params[:password]
-    )
-    session[:user_id] = user.id
-    session[:username] = user.username
-    redirect '/spaces'
+    email_address: params[:email_address])
+      flash[:notice] = "Credentials have already been used by another user."
+      redirect '/user/new'
+    else
+      user = User.create(
+      name: params[:name],
+      username: params[:username],
+      telephone_number: params[:telephone_number],
+      email_address: params[:email_address],
+      password: params[:password]
+      )
+      session[:user_id] = user.id
+      session[:username] = user.username
+      redirect '/spaces'
+    end
   end
 
   get '/spaces' do
+    redirect '/' unless session[:user_id]
     @user_id = session[:user_id]
     @username = session[:username]
     @all_spaces = Space.all
@@ -37,6 +49,8 @@ class Bnb < Sinatra::Base
   end
 
   get '/spaces/new' do
+
+    redirect '/' unless session[:user_id]
     erb :'/spaces/new'
   end
 
@@ -54,8 +68,33 @@ class Bnb < Sinatra::Base
     erb :'/availability/index'
   end
 
+
   post '/availability/new' do
     availible_dates: params[:date]
+  end
+
+  get '/session/new' do
+    erb :'/session/new'
+  end
+
+  post '/session' do
+    user = User.authenticate(username: params[:username], password: params[:password])
+
+    if user
+      session[:user_id] = user.id
+      session[:username] = user.username
+      redirect('/spaces')
+    else
+      flash[:notice] = 'Please check your email or password.'
+      redirect('/session/new')
+    end
+
+  end
+
+  post '/sessions/destroy' do
+    session.clear
+    flash[:notice] = 'You have signed out.'
+    redirect('/')
   end
 
   run! if app_file == $0
