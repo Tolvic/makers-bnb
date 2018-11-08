@@ -7,8 +7,6 @@ require './lib/space.rb'
 
 class Bnb < Sinatra::Base
   enable :sessions
-  attr_reader :set_date
-
 
   get '/' do
     erb :index
@@ -35,27 +33,17 @@ class Bnb < Sinatra::Base
     @user_id = session[:user_id]
     @username = session[:username]
     @all_spaces = Space.all
-    # in development
-    # @all_spaces.each do |space|
-    #   p JSON.generate({
-    #     space_name: space.space_name,
-    #     description: space.description,
-    #     price_per_night: space.price_per_night
-    #     })
-    # end
     erb :'/spaces/index'
   end
 
   get '/spaces/new' do
-    #attempting to use if statement to show and hide availability #@set_date = false
     erb :'/spaces/new'
   end
 
   post '/spaces/:id' do
-  #attempting to use if statement to show and hide availability  # @set_date = true
     Space.create(
       user_id: session[:user_id],
-      space_name: params[:space_name],
+      space_name: session[:space_name],
       description: params[:description],
       price_per_night: params[:price_per_night]
     )
@@ -66,6 +54,9 @@ class Bnb < Sinatra::Base
     erb :'/availability/index'
   end
 
+  post '/availability/new' do
+    availible_dates: params[:date]
+  end
 
   run! if app_file == $0
 end
