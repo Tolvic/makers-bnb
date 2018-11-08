@@ -162,6 +162,7 @@ function getAnswer(){
     dataType: 'json',
     success: function(data){
       $('#answer').text(data.answer);
+
     }
   });
 }
