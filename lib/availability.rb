@@ -1,13 +1,20 @@
+require 'pg'
+
 class Availability
-  attr_reader :space_id, :date
+  attr_reader :spaces_id, :available_dates
 
-  def initialize(space_id, date)
-    @space_id = space_id
-    @date = date
+  def initialize(spaces_id, available_dates)
+    @spaces_id = spaces_id
+    @available_dates = available_dates
   end
 
-  def self.create(space_id, date)
-    Availability.new(space_id, date)
+  def self.create(spaces_id, available_dates)
+    result = DatabaseConnection.query(
+      "INSERT INTO availability (spaces_id, available_dates)
+      VALUES ('#{spaces_id}', '#{available_dates}')
+      RETURNING id, spaces_id, available_dates")
+      Availability.new(result[0]["spaces_id"],
+      result[0]["available_dates"]
+    )
   end
-
 end
