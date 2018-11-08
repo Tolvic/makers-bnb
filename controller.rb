@@ -65,12 +65,17 @@ class Bnb < Sinatra::Base
   end
 
   get '/availability' do
+    @space_name = session[:space_name]
+    session[:space_id] = "some method in availability class"
     erb :'/availability/index'
   end
 
 
   post '/availability/new' do
-    availible_dates: params[:date]
+    # availible_dates: params[:new_date]
+    @space_id = session[:space_id]
+    @date =
+    redirect '/availability'
   end
 
   get '/session/new' do

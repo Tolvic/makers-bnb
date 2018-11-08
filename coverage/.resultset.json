@@ -5,23 +5,43 @@
         null,
         null,
         1,
-<<<<<<< HEAD
-        18,
+        29,
         null,
-        18,
+        29,
         null,
-        18,
+        29,
         null,
-        18,
-=======
-        27,
+        29,
+        null
+      ],
+      "/Users/moishe/Documents/Projects/Week-6/makers-bnb/spec/availabilty_class_spec.rb": [
+        1,
         null,
-        27,
+        1,
         null,
-        27,
+        1,
+        1,
+        1,
         null,
-        27,
->>>>>>> b4ad38fad77f258803f6434cc94ea34c264557fb
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/moishe/Documents/Projects/Week-6/makers-bnb/lib/availability.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/moishe/Documents/Projects/Week-6/makers-bnb/spec/database_connection_spec.rb": [
@@ -70,16 +90,6 @@
         1,
         1,
         1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
         1,
         null,
         null
@@ -88,6 +98,16 @@
         1,
         1,
         1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
         1,
         0,
         0,
@@ -96,10 +116,7 @@
         null,
         null
       ],
-<<<<<<< HEAD
-      "/Users/moishe/Documents/Projects/Week-6/makers-bnb/spec/features/spaces_spec.rb": [
-=======
-      "/Users/terencemace/projects/makers-bnb/spec/features/sign_in_spec.rb": [
+      "/Users/moishe/Documents/Projects/Week-6/makers-bnb/spec/features/sign_in_spec.rb": [
         1,
         1,
         4,
@@ -151,8 +168,7 @@
         null,
         null
       ],
-      "/Users/terencemace/projects/makers-bnb/spec/features/spaces_spec.rb": [
->>>>>>> b4ad38fad77f258803f6434cc94ea34c264557fb
+      "/Users/moishe/Documents/Projects/Week-6/makers-bnb/spec/features/spaces_spec.rb": [
         1,
         1,
         1,
@@ -375,14 +391,6 @@
         null
       ]
     },
-<<<<<<< HEAD
-    "timestamp": 1541671574
-=======
-<<<<<<< HEAD
-    "timestamp": 1541668890
-=======
-    "timestamp": 1541628231
->>>>>>> b4ad38fad77f258803f6434cc94ea34c264557fb
->>>>>>> 2e3983cd167c1dd7f9124620cb1f345dcfaee415
+    "timestamp": 1541676400
   }
 }
