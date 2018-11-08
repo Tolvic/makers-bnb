@@ -60,7 +60,8 @@ class Bnb < Sinatra::Base
       description: params[:description],
       price_per_night: params[:price_per_night]
     )
-    session[:spaces_id] = @new_space.id
+    session[:space_id] = @new_space.id
+    @all_available_dates = Availability.all(session[:space_id])
     redirect '/availability'
   end
 
@@ -71,9 +72,8 @@ class Bnb < Sinatra::Base
 
 
   post '/availability/new' do
-    @space_id = session[:space_id]
-    p @date = params[:new_date]
-    Availability.create(@space_id, @date)
+    @date = params[:new_date]
+    Availability.create(session[:space_id], @date)
     redirect '/availability'
   end
 
