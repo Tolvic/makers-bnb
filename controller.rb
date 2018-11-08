@@ -51,17 +51,21 @@ class Bnb < Sinatra::Base
     erb :'/spaces/new'
   end
 
-  post '/store_space' do
-    #attempting to use if statement to show and hide availability  # @set_date = true
+  post '/spaces/:id' do
+  #attempting to use if statement to show and hide availability  # @set_date = true
     Space.create(
       user_id: session[:user_id],
       space_name: params[:space_name],
       description: params[:description],
       price_per_night: params[:price_per_night]
     )
-
-    redirect '/spaces'
+    redirect '/availability'
   end
+
+  get '/availability' do
+    erb :'/availability/index'
+  end
+
 
   run! if app_file == $0
 end
