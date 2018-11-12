@@ -21,7 +21,7 @@ describe User do
     )
 
     @booking = Booking.create(space_id: @space.id,
-      user_id: @renter.id,
+      renter_user_id: @renter.id,
       availability_id: 1,
     )
   end
@@ -34,7 +34,7 @@ describe User do
       expect(@booking).to be_a Booking
       expect(@booking.id).to eq persisted_data['id']
       expect(@booking.space_id).to eq @space.id
-      expect(@booking.user_id).to eq @renter.id
+      expect(@booking.renter_user_id).to eq @renter.id
       expect(@booking.availability_id).to eq '1'
     end
   end
@@ -54,11 +54,11 @@ describe User do
       password: 'IlovejterryT123')
 
       Booking.create(space_id: @space.id,
-        user_id: @renter2.id,
+        renter_user_id: @renter2.id,
         availability_id: 1,
       )
       Booking.create(space_id: @space2.id,
-        user_id: @renter.id,
+        renter_user_id: @renter.id,
         availability_id: 1,
       )
 
@@ -68,7 +68,7 @@ describe User do
       expect(result.last).to be_a Booking
       expect(result.length).to eq 2
       expect(result.last.availability_id).to eq "1"
-      expect(result.last.user_id).to eq @renter2.id
+      expect(result.last.renter_user_id).to eq @renter2.id
       expect(result.last.space_id).to eq @space.id
       expect(result.last.approval_status).to eq "pending"
     end
@@ -87,12 +87,12 @@ describe User do
       password: 'IlovejterryT123')
 
       @booking2 = Booking.create(space_id: @space.id,
-        user_id: @renter2.id,
+        renter_user_id: @renter2.id,
         availability_id: 1,
       )
 
       @booking3 = Booking.create(space_id: @space.id,
-        user_id: @renter2.id,
+        renter_user_id: @renter2.id,
         availability_id: 2,
       )
 
@@ -105,6 +105,12 @@ describe User do
       expect(persisted_data1["approval_status"]).to eq "approved"
       expect(persisted_data2["approval_status"]).to eq "declined"
       expect(persisted_data3["approval_status"]).to eq "pending"
+    end
+  end
+
+  describe '#find_my_requests' do
+    it "shows all requests I have made to book properties" do
+      expect(Booking.find_my_requests(@renter.id)).to eq 1
     end
   end
 end
