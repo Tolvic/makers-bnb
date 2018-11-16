@@ -5,6 +5,7 @@ ruby '2.5.0'
 gem 'bcrypt'
 gem 'capybara'
 gem 'pg'
+gem "rack", ">= 2.0.6"
 gem 'rake'
 gem 'rubocop', '0.56.0'
 gem 'sinatra'
