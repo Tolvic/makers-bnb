@@ -1,4 +1,4 @@
-# makers-bnb
+# Makers BnB
 A Makers challenge to create an Air BnB clone. The goal of this challenge was for us to experience working in a team, to create work flows and to follow agile practices. Ultimately, we did not finsh the week with a working solution but we that was not the goal of the week.  
 
 ## Specifications
