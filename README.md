@@ -1,4 +1,5 @@
 # makers-bnb
+A Makers challenge to create an Air BnB clone. The goal of this challenge was for us to experience working in a team, to create work flows and to follow agile practices. Ultimately, we did not finsh the week with a working solution but we that was not the goal of the week.  
 
 ## Specifications
 
@@ -131,48 +132,3 @@ CREATE DATABASE makers_bnb_db;
 * Run the query in the sql files contained within the db folder
 
 * Repeat these steps but create a database called makers_bnb_db_test
-
-
-```JavaScript
-<p id="a" >4</p>
-<p id ="b" >5</p>
-<button id="add">add</button>
-<button id="get">get</button>
-<p id="answer"></p>
-
-<script type="text/javascript">
-
-
-
-function passParms() {
-  $.ajax({
-    type: "POST",
-    url: "/",
-    data: {
-      a: $('#a').text(),
-      b: $('#b').text()
-    }
-  });
-}
-
-function getAnswer(){
-  $.ajax({
-    type: "GET",
-    url: "/answer",
-    dataType: 'json',
-    success: function(data){
-      $('#answer').text(data.answer);
-    }
-  });
-}
-
-$("#add").click(function(){
-  passParms();
-
-})
-
-$("#get").click(function(){
-  getAnswer();
-
-})
-```
